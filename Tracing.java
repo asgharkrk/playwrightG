@@ -24,5 +24,5 @@
         textLocator.click();
     }
 
-//label[.//font[normalize-space(.) = 'In which state will you primarily be doing business?']]
+//label[normalize-space(text()) = '-- Select One --']
 
