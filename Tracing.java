@@ -24,5 +24,5 @@
         textLocator.click();
     }
 
-//label[starts-with(@id, 'CREDIT_APP_INPUT_FORM') and .//font[normalize-space(.) = 'In which state will you primarily be doing']]
+//label[.//font[normalize-space(.) = 'In which state will you primarily be doing business?']]
 
