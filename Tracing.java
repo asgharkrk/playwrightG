@@ -23,3 +23,5 @@
         page.waitForLoadState(LoadState.NETWORKIDLE);
         textLocator.click();
     }
+
+//label[starts-with(@id, 'CREDIT_APP_INPUT_FORM')]
