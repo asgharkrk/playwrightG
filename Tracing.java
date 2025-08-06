@@ -24,4 +24,5 @@
         textLocator.click();
     }
 
-//label[starts-with(@id, 'CREDIT_APP_INPUT_FORM') and following-sibling::span[contains(text(), 'In which state will you primarily be doing business in?')]]
+//label[starts-with(@id, 'CREDIT_APP_INPUT_FORM') and .//font[normalize-space(.) = 'In which state will you primarily be doing']]
+
