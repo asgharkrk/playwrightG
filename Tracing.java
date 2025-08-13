@@ -24,5 +24,5 @@
         textLocator.click();
     }
 
-////td[span[contains(text(), 'ABC Supply Co. Inc')]]/ancestor::tr[1]/preceding-sibling::*[1]//li//a[starts-with(@id, 'TASK_CONSOLE_FORM')]
+//span[text()='ABC Supply Co. Inc' and @class='font-italic text-grey font-weight-bold small']/ancestor::td[1]//a[@id='TASK_COLSOLE_FORM:varcustomerRequestsid:3:review_credit_app_cmd']
 
