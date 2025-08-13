@@ -25,4 +25,5 @@
     }
 
 //span[text()='ABC Supply Co. Inc' and @class='font-italic text-grey font-weight-bold small']/ancestor::td[1]//a[@id='TASK_COLSOLE_FORM:varcustomerRequestsid:3:review_credit_app_cmd']
+//span[text()='ABC Supply Co. Inc' and @class='font-italic text-grey font-weight-bold small']/ancestor::td[1]//a[contains(@onclick, 'PrimeFaces.ab') and contains(., 'REQPJ')]
 
