@@ -24,6 +24,4 @@
         textLocator.click();
     }
 
-page.getByLabel("Unread L&W Support, LW Supply [EXTERNAL] LW Supply: Verify your Email")
-                .getByText("L&W Support", new Page.GetByTextOptions().setExact(false))
-                .click();
+locator.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(5000));
