@@ -24,4 +24,6 @@
         textLocator.click();
     }
 
-locator.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(5000));
+
+
+page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName(Pattern.compile("^Unread"))).first().click();
