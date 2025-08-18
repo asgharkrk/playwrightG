@@ -39,3 +39,4 @@ import com.microsoft.playwright.Page;
                    ));
     }
 
+.ui-selectonemenu >> has=label:has-text("State - City *") >> has=.ui-selectonemenu-label:has-text("IA- Davenport")
