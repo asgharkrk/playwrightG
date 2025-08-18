@@ -26,4 +26,16 @@
 
 
 
-page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName(Pattern.compile("^Unread"))).first().click();
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
+
+
+        page.locator(".ui-selectonemenu")
+                   .filter(new Locator.FilterOptions().setHas(
+                       page.getByLabel("State - City *")
+                   ))
+                   .filter(new Locator.FilterOptions().setHas(
+                       page.locator(".ui-selectonemenu-label").getByText("IA- Davenport")
+                   ));
+    }
+
