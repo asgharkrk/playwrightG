@@ -49,3 +49,9 @@ page.locator(".ui-selectonemenu")
 
 .ui-selectonemenu:has(label:regex("State.*City")):has(.ui-selectonemenu-label:regex("IA.*Davenport"))
 
+
+page.getByText(Pattern.compile(".*Hello.*", Pattern.CASE_INSENSITIVE));
+
+
+ 
+
