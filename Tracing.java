@@ -46,3 +46,6 @@ page.locator(".ui-selectonemenu")
                    .filter(new Locator.FilterOptions().setHas(
                        page.locator(".ui-selectonemenu-label").getByText("IA- Davenport", new Locator.GetByTextOptions().setExact(true))
                    ));
+
+.ui-selectonemenu:has(label:regex("State.*City")):has(.ui-selectonemenu-label:regex("IA.*Davenport"))
+
