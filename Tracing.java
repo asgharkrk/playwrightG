@@ -39,4 +39,10 @@ import com.microsoft.playwright.Page;
                    ));
     }
 
-.ui-selectonemenu >> has=label:has-text("State - City *") >> has=.ui-selectonemenu-label:has-text("IA- Davenport")
+page.locator(".ui-selectonemenu")
+                   .filter(new Locator.FilterOptions().setHas(
+                       page.getByLabel("State - City", new Page.GetByLabelOptions().setExact(false))
+                   ))
+                   .filter(new Locator.FilterOptions().setHas(
+                       page.locator(".ui-selectonemenu-label").getByText("IA- Davenport", new Locator.GetByTextOptions().setExact(true))
+                   ));
