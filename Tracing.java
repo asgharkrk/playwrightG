@@ -1,57 +1,23 @@
- public static void clickWithNetworkIdle(Locator locator) {
-        locator.waitFor(new Locator.WaitForOptions().setState("visible"));
-        locator.waitFor(new Locator.WaitForOptions().setState("enabled"));
-        locator.page().waitForLoadState(LoadState.NETWORKIDLE);
-        locator.click();
-    }
- public static void fillWithNetworkIdle(Locator locator, String value) {
-        locator.waitFor(new Locator.WaitForOptions().setState("visible"));
-        locator.waitFor(new Locator.WaitForOptions().setState("enabled"));
-        locator.page().waitForLoadState(LoadState.NETWORKIDLE);
-        locator.fill(value);
-    }
- public static void selectOptionWithNetworkIdle(Locator locator, String value) {
-        locator.waitFor(new Locator.WaitForOptions().setState("visible"));
-        locator.waitFor(new Locator.WaitForOptions().setState("enabled"));
-        locator.page().waitForLoadState(LoadState.NETWORKIDLE);
-        locator.selectOption(value);
-    }
- public static void clickWithNetworkIdle(Page page, String text) {
-        Locator textLocator = page.getByText(text);
-        textLocator.waitFor(new Locator.WaitForOptions().setState("visible"));
-        textLocator.waitFor(new Locator.WaitForOptions().setState("enabled"));
-        page.waitForLoadState(LoadState.NETWORKIDLE);
-        textLocator.click();
-    }
+// Locate the combobox by its role and accessible name, then click to open
+Locator stateDropdown = page.getByRole(AriaRole.COMBOBOX, new Page.GetByRoleOptions().setName("State/Province"));
+stateDropdown.click();
+// Directly locate and click the associated control via its label text
+page.getByLabel("State/Province").click();
 
+===============================================
+// First, narrow down the section by role and accessible name
+Locator section = page.getByRole(AriaRole.COMBOBOX, 
+                    new Page.GetByRoleOptions().setName("State/Province"));
 
+// Now click the label that has the text "select state/province-"
+section.getByText("select state/province-").click();
+===============================================
 
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
+// First, locate the entire section by its wrapper <span>
+Locator section = page.locator("span.ui-float-label.ui-float-label2");
 
+// Ensure the section has the label with text "State/Province"
+Locator stateLabel = section.locator("label").filter(new Locator.FilterOptions().setHasText("State/Province"));
 
-        page.locator(".ui-selectonemenu")
-                   .filter(new Locator.FilterOptions().setHas(
-                       page.getByLabel("State - City *")
-                   ))
-                   .filter(new Locator.FilterOptions().setHas(
-                       page.locator(".ui-selectonemenu-label").getByText("IA- Davenport")
-                   ));
-    }
-
-page.locator(".ui-selectonemenu")
-                   .filter(new Locator.FilterOptions().setHas(
-                       page.getByLabel("State - City", new Page.GetByLabelOptions().setExact(false))
-                   ))
-                   .filter(new Locator.FilterOptions().setHas(
-                       page.locator(".ui-selectonemenu-label").getByText("IA- Davenport", new Locator.GetByTextOptions().setExact(true))
-                   ));
-
-.ui-selectonemenu:has(label:regex("State.*City")):has(.ui-selectonemenu-label:regex("IA.*Davenport"))
-
-
-page.getByText(Pattern.compile(".*Hello.*", Pattern.CASE_INSENSITIVE));
-
-
- 
-
+// Now, inside that same section, locate the label with text "select state/province-" and click it
+section.locator("label").filter(new Locator.FilterOptions().setHasText("select state/province-")).click();
